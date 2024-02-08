@@ -6,7 +6,7 @@ const SobrePretaLabPage = () => {
       
       <div className="card">
         <div className="cardPreta">
-          <img src="../../../public/pretalab.png" alt="logo da pretalab"></img>
+          <img src="/pretalab.png" alt="logo da pretalab"></img>
         </div>
         <div className="cardBody">
           <h2 className="cardTittle"SobrePretaLabPage></h2>

@@ -5,7 +5,7 @@ const SobreMimPage = () => {
     <>
       <div className="card">
         <div className="cardAvatar">
-          <img src="../../../public/sobremim.png" alt="foto de uma mulher com cabelo trançado preto" />
+          <img src="/sobremim.png" alt="foto de uma mulher com cabelo trançado preto" />
         </div>
         <div className="cardBody">
           <h2 className="cardTittle">Dayana Santos</h2>
