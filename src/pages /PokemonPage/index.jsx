@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import CardPokemon from "../../components/CardPokemon";
 import axios from "axios";
 import "./styles.css";
+import Loader from "../../components/Loader";
 
 const PokemonPage = () => {
   const [referenciasPokemons, setReferenciasPokemons] = useState([]);
-  const [listaPokemons, setListaPokemons] = useState([]);
+  const [listaPokemons, setListaPokemons] = useState([])
+  
 
   const pegar100ReferenciasPokemons = async () => {
     try {
@@ -31,6 +33,7 @@ const PokemonPage = () => {
         listaTemporaria.push(resposta.data);
       } catch (error) {
         console.error("Erro ao buscar o pokemon", error);
+        setRemoveLoading(true)
       }
     }
 
@@ -41,8 +44,10 @@ const PokemonPage = () => {
     pegarListaDePokemons();
   }, [referenciasPokemons]);
 
-  return (
+  return ( 
+    
     <div className="pokemon-container">
+      {!removeLoader && <loading />}
       {listaPokemons.map((pokemon) => (
         <CardPokemon
           nome={pokemon.name}
@@ -51,8 +56,13 @@ const PokemonPage = () => {
           url={pokemon.forms[0].url}
         />
       ))}
-    </div>
+        </div>
   );
 };
 
 export default PokemonPage;
+
+ /*const [loading, setLoading ] =useState(true)
+  useEffect(()=> {
+    setTimeout (() => setLoading(false), 500)
+  },[])*/
