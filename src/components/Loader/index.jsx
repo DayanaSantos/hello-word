@@ -1,12 +1,11 @@
 import "./styles.css";
 
 function Loader() {
-    return (
-        <div className={styles.container}>
-            <div className={styles.loader}></div>
-         </div>
-
-    );
+  return (
+    <div className="container">
+      <div className="loader"></div>
+    </div>
+  );
 }
 
 export default Loader;
